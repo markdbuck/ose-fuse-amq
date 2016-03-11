@@ -12,6 +12,16 @@
   },
   "parameters": [
     {
+      "name": "BROKER_SERVICE_HOST",
+      "value": "127.0.0.1",
+      "description": "Host name for broker service"
+    },
+    {
+      "name": "BROKER_SERVICE_PORT",
+      "value": "61616",
+      "description": "Port number for broker service"
+    },
+    {
       "name": "APP_NAME",
       "value": "s2i-quickstart-karaf-camel-amq",
       "description": "Application Name"
@@ -142,6 +152,14 @@
             },
             "forcePull": true,
             "env": [
+              {
+                "name": "BROKER_SERVICE_HOST",
+                "value": "${BROKER_SERVICE_HOST}"
+              },
+              {
+                "name": "BROKER_SERVICE_PORT",
+                "value": "${BROKER_SERVICE_PORT}"
+              },
               {
                 "name": "BUILD_LOGLEVEL",
                 "value": "5"
